@@ -1,6 +1,6 @@
 cask "pdf-review" do
-  version "0.2.4"
-  sha256 "2da3d02d2a82779a506494d87716d3917fc53539bc099f3cdcc62cfa8f10bbc6"
+  version "0.2.6"
+  sha256 "259ac5527d204d9877731493c65c28f3afcf2eff822f93083b43b381cfd35ca7"
 
   url "https://github.com/OlofMoriya/pdf-review/releases/download/v#{version}/PDF-Review-mac.dmg"
   name "PDF Review"
