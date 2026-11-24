@@ -1,8 +1,8 @@
 class TodoTui < Formula
   desc "Terminal-based todo list manager"
   homepage "https://github.com/OlofMoriya/todo-tui"
-  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "9bc91ce276616f393440aca3305b64539fb38d53e87d7fa3df4b47a5c3d99227"
+  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "7fe471ec31cad979696bc71479dbc237bc6b6e971c43be24f4b0f20320a08d47"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
@@ -15,6 +15,11 @@ class TodoTui < Formula
   test do
     assert_match "todo-tui #{version}", shell_output("#{bin}/todo-tui --version")
     system bin/"todo-tui", "add", "Homebrew smoke test", "--due", "0"
+    assert_equal "1", shell_output("#{bin}/todo-tui list --count").strip
+    system bin/"todo-tui", "delete", "1"
+    assert_equal "0", shell_output("#{bin}/todo-tui list --count").strip
+    assert_match "Homebrew smoke test", shell_output("#{bin}/todo-tui trash --json")
+    system bin/"todo-tui", "restore", "1"
     assert_equal "1", shell_output("#{bin}/todo-tui list --count").strip
     assert_match "\"outcome\":\"off\"", shell_output("#{bin}/todo-tui sync --json")
   end
