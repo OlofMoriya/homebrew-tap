@@ -1,8 +1,8 @@
 class TodoTui < Formula
   desc "Terminal-based todo list manager"
   homepage "https://github.com/OlofMoriya/todo-tui"
-  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "7fe471ec31cad979696bc71479dbc237bc6b6e971c43be24f4b0f20320a08d47"
+  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "c1c2a0ddde879e126d393e047dac77f5be626da200c955fdae278a85283ae301"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
@@ -22,5 +22,6 @@ class TodoTui < Formula
     system bin/"todo-tui", "restore", "1"
     assert_equal "1", shell_output("#{bin}/todo-tui list --count").strip
     assert_match "\"outcome\":\"off\"", shell_output("#{bin}/todo-tui sync --json")
+    assert_equal "[]", shell_output("#{bin}/todo-tui sync log --json").strip
   end
 end
