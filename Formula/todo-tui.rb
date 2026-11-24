@@ -1,8 +1,8 @@
 class TodoTui < Formula
   desc "Terminal-based todo list manager"
   homepage "https://github.com/OlofMoriya/todo-tui"
-  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.4.4.tar.gz"
-  sha256 "d1425778db5b89e93eb7c0c732ced165fd64b245f973074cba962f33950fa332"
+  url "https://github.com/OlofMoriya/todo-tui/archive/refs/tags/v0.4.5.tar.gz"
+  sha256 "19ea4721b7ee40c7bc317719fb7321c3da21eef39ada54120e01c539cf874d67"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
