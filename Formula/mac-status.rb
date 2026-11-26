@@ -1,8 +1,8 @@
 class MacStatus < Formula
   desc "Read-only macOS setup and backup dashboard"
   homepage "https://github.com/OlofMoriya/mac-status"
-  url "https://github.com/OlofMoriya/mac-status/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "94dcc5b8364a401859cbd508f622cce84a22a48bae152e111adee9fbece3053a"
+  url "https://github.com/OlofMoriya/mac-status/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "e43f7b4fe1ea62fa066d75cee83260cd8161f1de5c4c40663d0dc60bbddba848"
 
   depends_on "rust" => :build
   depends_on :macos
